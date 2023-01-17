@@ -1,7 +1,6 @@
 let cptLike = 0;
 let cptPass = 0;
 
-getStoredCptValues();
 
 function getStoredCptValues()
 {
@@ -11,7 +10,6 @@ function getStoredCptValues()
     });
     chrome.runtime.sendMessage({type: "onSwipe", cptLike: cptLike, cptPass: cptPass});
 }
-
 
 function requestHandler(req){
     if(req.url.includes("https://api.gotinder.com/like/") && req.method == "POST"){
@@ -38,7 +36,13 @@ chrome.webRequest.onBeforeSendHeaders.addListener(requestHandler,
     {urls: ["<all_urls>"]},
     ["requestHeaders"]);
 
-
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if( request.type === "getStoredCptValues" ) {
+            getStoredCptValues();
+        }
+    });
 /*
-
+Faire stat journaliere et stat totale
+likes, pass, swipes, match/likes, temps passé, nombre de message envoyé, nombre de message recus
 */

@@ -1,3 +1,5 @@
+chrome.runtime.sendMessage({type: "getStoredCptValues"});
+
 likes  = document.getElementById('likesId');
 pass =  document.getElementById("passId");
 swipes = document.getElementById("swipesId");
