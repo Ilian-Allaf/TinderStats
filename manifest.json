@@ -1,0 +1,30 @@
+{
+  "name": "TinderStats",
+  "description": "Learning all about Chrome Extensions Manifest Version 3!",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "<all_urls>",
+    "storage",
+    "runtime"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
