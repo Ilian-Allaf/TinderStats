@@ -16,7 +16,10 @@ Download or clone the repository
 git clone https://github.com/Ilian-Allaf/cat_web_app.git
 ```
 
-Open Google Chrometo this address chrome://extensions/
+Open Google Chrometo this address
+```
+chrome://extensions/
+```
 Enable Developer mode in the top right corner
 Click on "Load unpacked" and select the folder where you cloned or downloaded the repository
 The TinderStats extension should now be installed
